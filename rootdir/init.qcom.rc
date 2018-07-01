@@ -583,6 +583,7 @@ service adsprpcd /system/bin/adsprpcd
    class main
    user media 
    group media drmrpc
+   disabled
 
 # SONY misc
 service tad_static /system/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
@@ -638,6 +639,7 @@ service qmuxd /system/bin/qmuxd
 service netmgrd /system/bin/netmgrd
     class main
     group system wakelock
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service taimport /system/bin/taimport
@@ -746,6 +748,7 @@ service ril-daemon /system/bin/rild
     socket rild-debug stream 660 radio system
     user root
     group radio cache inet misc audio log readproc wakelock qcom_diag drmrpc trimarea
+    disabled
 
 on property:service.usb.otg.switch=check
     write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1
