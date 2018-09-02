@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
+    $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -218,5 +219,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
    macaddrsetup
+
+
+# udev rules
+PRODUCT_COPY_FILES += \
+    device/sony/kitakami-common/ubuntu/70-kitakami.rules:system/halium/lib/udev/rules.d/70-android.rules
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
