@@ -72,20 +72,20 @@ static struct ril_event * watch_table[MAX_FD_EVENTS];
 static struct ril_event timer_list;
 static struct ril_event pending_list;
 
-#define DEBUG 0
+#define DEBUG 1 
 
 #if DEBUG
 #define dlog(x...) RLOGD( x )
 static void dump_event(struct ril_event * ev)
 {
-    dlog("~~~~ Event %x ~~~~", (unsigned int)ev);
-    dlog("     next    = %x", (unsigned int)ev->next);
-    dlog("     prev    = %x", (unsigned int)ev->prev);
+    dlog("~~~~ Event %p ~~~~", (void*)ev);
+    dlog("     next    = %p", (void*)ev->next);
+    dlog("     prev    = %p", (void*)ev->prev);
     dlog("     fd      = %d", ev->fd);
     dlog("     pers    = %d", ev->persist);
     dlog("     timeout = %ds + %dus", (int)ev->timeout.tv_sec, (int)ev->timeout.tv_usec);
-    dlog("     func    = %x", (unsigned int)ev->func);
-    dlog("     param   = %x", (unsigned int)ev->param);
+    dlog("     func    = %p", ev->func);
+    dlog("     param   = %p", ev->param);
     dlog("~~~~~~~~~~~~~~~~~~");
 }
 #else
@@ -251,7 +251,7 @@ void ril_event_init()
 // Initialize an event
 void ril_event_set(struct ril_event * ev, int fd, bool persist, ril_event_cb func, void * param)
 {
-    dlog("~~~~ ril_event_set %x ~~~~", (unsigned int)ev);
+    dlog("~~~~ ril_event_set %p ~~~~", ev);
     memset(ev, 0, sizeof(struct ril_event));
     ev->fd = fd;
     ev->index = -1;
