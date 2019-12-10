@@ -219,6 +219,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    macaddrsetup
 
+# Ubuntu Touch timekeeper support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/halium/etc/init/timekeeper.conf:system/halium/etc/init/timekeeper.conf
 
 # udev rules
 PRODUCT_COPY_FILES += \
