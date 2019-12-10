@@ -224,6 +224,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/halium/etc/init/timekeeper.conf:system/halium/etc/init/timekeeper.conf
 
+# Ubuntu Touch Mir/hybris integration
+PRODUCT_PACKAGES += \
+    libaudioflingerglue \
+    libminisf \
+    miniafservice \
+    minimediaservice
+
 # udev rules
 PRODUCT_COPY_FILES += \
     device/sony/kitakami-common/halium/lib/udev/rules.d/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules
