@@ -222,6 +222,6 @@ PRODUCT_PACKAGES += \
 
 # udev rules
 PRODUCT_COPY_FILES += \
-    device/sony/kitakami-common/ubuntu/70-kitakami.rules:system/halium/lib/udev/rules.d/70-android.rules
+    device/sony/kitakami-common/halium/lib/udev/rules.d/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)

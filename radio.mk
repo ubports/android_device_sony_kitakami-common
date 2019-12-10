@@ -17,7 +17,7 @@
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override
+    device/sony/kitakami-common/halium/etc/init/ofono.override:system/halium/etc/init/ofono.override
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
