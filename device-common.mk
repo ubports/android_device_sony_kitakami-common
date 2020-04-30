@@ -229,10 +229,39 @@ PRODUCT_PACKAGES += \
     libaudioflingerglue \
     libminisf \
     miniafservice \
-    minimediaservice
+    minimediaservice \
+    gst-droid \
+    libmedia_compat_layer \
+    libsf_compat_layer \
+    libubuntu_application_api \
+    direct_ubuntu_application_sensors_c_api_for_hybris_test \
+    direct_ubuntu_application_sensors_for_hybris_test \
+    direct_ubuntu_application_gps_c_api_for_hybris_test \
+    libcameraservice \
+    libdroidmedia \
+    libcamera_compat_layer \
+    camera_service \
+    gst-droid \
+    libmedia_compat_layer \
+    libui_compat_layer \
+    libsf_compat_layer \
+    minisfservice \
+
+# Droidmedia
+MINIMEDIA_SENSORSERVER_DISABLE := 1
 
 # udev rules
 PRODUCT_COPY_FILES += \
-    device/sony/kitakami-common/halium/lib/udev/rules.d/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules
+    device/sony/kitakami-common/halium/lib/udev/rules.d/70-android.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    device/sony/kitakami-common/halium/qcril.db:system/vendor/qcril.db \
+    device/sony/kitakami-common/halium/BCM4356.hcd:system/etc/firmware/BCM4356.hcd \
+
+# telepathy-ofono quirks
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.t-o.quirk.forcesink=sink.primary_output \
+    ro.t-o.quirk.forcesource=source.primary_input \
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+
+# copy libbt firmware
+$(call inherit-product-if-exists, hardware/broadcom/libbt/vnd_buildcfg.mk)

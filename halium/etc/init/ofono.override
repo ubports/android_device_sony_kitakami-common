@@ -10,4 +10,4 @@ env OFONO_RIL_DEVICE=ril
 env OFONO_RIL_NUM_SIM_SLOTS=2
 env OFONO_RIL_RAT_LTE=1
 
-exec ofonod -P provision,udev*,dun*,smart*,hfp_bluez5,stktest,sap
+OFONO_RIL_TRACE=y exec ofonod -n --debug=src/*,plugins/*,drivers/* -P provision,udev*,dun*,smart*,hfp_bluez5,stktest,sap

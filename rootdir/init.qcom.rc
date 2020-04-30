@@ -298,6 +298,21 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
 
+# Start from LG G6
+    # copy prebuilt qcril.db files always
+    # copy /system/vendor/qcril.db /data/misc/radio/qcril_prebuilt.db
+    chown radio radio /data/misc/radio/qcril_prebuilt.db
+    chmod 0666 /data/misc/radio/qcril_prebuilt.db
+
+    # File flags for prebuilt ril db file
+    write /data/misc/radio/prebuilt_db_support 1
+    chown radio radio /data/misc/radio/prebuilt_db_support
+    chmod 0400 /data/misc/radio/prebuilt_db_support
+    write /data/misc/radio/db_check_done 0
+    chown radio radio /data/misc/radio/db_check_done
+    chmod 0666 /data/misc/radio/db_check_done
+# end from LG
+
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
