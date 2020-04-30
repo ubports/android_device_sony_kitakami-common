@@ -169,5 +169,8 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta
 WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 
+#allow arm64 libhybris
+HYBRIS_MEDIA_32_BIT_ONLY := false
+
 # Inherit common blobs
 -include vendor/sony/kitakami-common/BoardConfigVendor.mk
