@@ -36,10 +36,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libargs=-d[SPACE]/dev/smd0 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    ril.subscription.types=NV,RUIM
+    ril.subscription.types=NV,RUIM \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.data.large_tcp_window_size=true \
     ro.ril.telephony.mqanelements=5 \
-    ro.telephony.call_ring.multiple=false \
-    ro.use_data_netmgrd=true
