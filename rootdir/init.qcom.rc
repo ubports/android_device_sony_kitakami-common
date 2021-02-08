@@ -30,6 +30,7 @@
 #
 
 import init.qcom.usb.rc
+import init.recovery.qcom.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
